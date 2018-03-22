@@ -65,4 +65,4 @@ if(IS_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/.piolibdeps)
     )
 endif()
 
-add_executable(${PROJECT_NAME} ${SRC_LIST})
+add_executable(${PROJECT_NAME} ${SRC_LIST} src/ControllerEnvironment.cpp src/ControllerEnvironment.h src/Transceiver430.cpp src/Transceiver430.h)
