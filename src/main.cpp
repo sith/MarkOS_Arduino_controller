@@ -5,7 +5,6 @@
 #include <ControllerStateTransceiver.h>
 #include "ArduinoController.h"
 #include "ControllerEnvironment.h"
-
 ControllerEnvironment *controllerEnvironment;
 
 void setup() {
@@ -19,7 +18,3 @@ void setup() {
 void loop() {
     controllerEnvironment->getCycle().next();
 }
-
-
-
-

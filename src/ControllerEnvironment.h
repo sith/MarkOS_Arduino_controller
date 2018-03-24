@@ -14,7 +14,7 @@ class ControllerEnvironment : public mark_os::controller::Environment {
     mark_os::cycle::Cycle cycle;
     ArduinoController controller;
     Transceiver430 transceiver430;
-    mark_os::controller::ControllerStateTransceiver controllerStateTransceiver{controller, transceiver430, 1};
+    mark_os::controller::ControllerStateTransceiver controllerStateTransceiver{controller, transceiver430};
 public:
 
     mark_os::controller::Controller &getController()
