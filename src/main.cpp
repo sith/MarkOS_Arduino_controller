@@ -5,6 +5,7 @@
 #include <ControllerStateTransceiver.h>
 #include "ArduinoController.h"
 #include "ControllerEnvironment.h"
+#include <Receiver.h>
 ControllerEnvironment *controllerEnvironment;
 
 void setup() {

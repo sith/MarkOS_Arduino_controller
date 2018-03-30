@@ -28,9 +28,7 @@ public:
 
     ArduinoController();
 
-    mark_os::controller::ControllerState readControllerState() override;
-
-
+    mark_os::commons::Optional<mark_os::controller::ControllerState> readControllerState() override;
 };
 
 
