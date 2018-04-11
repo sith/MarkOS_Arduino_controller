@@ -7,6 +7,8 @@
 
 #include <Arduino.h>
 #include <Controller.h>
+#include <TR433.h>
+#include <TR433.cpp>
 
 class ArduinoController : public mark_os::controller::Controller {
 

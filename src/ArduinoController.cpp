@@ -22,7 +22,7 @@ ArduinoController::ArduinoController() {
 
 int16 ArduinoController::calibrateJoystick(uint8 pin) {
     Statistic statistic;
-    for (int i = 0; i < 10; i++) {
+    for (int8 i = 0; i < 10; i++) {
         statistic.add(analogRead(pin));
         delay(10);
     }

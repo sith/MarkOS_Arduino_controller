@@ -7,14 +7,20 @@
 
 
 #include <Environment.h>
+#include <TransceiverWithRetries.h>
+#include <TransceiverWithRetries.cpp>
+#include <JoystickToleranceAwareController.h>
 #include "ArduinoController.h"
 #include "TR433.h"
 
 class ControllerEnvironment : public mark_os::controller::Environment {
     mark_os::cycle::Cycle cycle;
-    ArduinoController controller;
+    ArduinoController arduinoController;
+    mark_os::controller::JoystickToleranceAwareController controller{arduinoController};
     TR433<mark_os::controller::ControllerState> tr433;
-    mark_os::controller::ControllerStateTransceiver controllerStateTransceiver{controller, tr433};
+    mark_os::communication::TransceiverWithRetries<mark_os::controller::ControllerState> transceiverWithRetries{tr433,
+                                                                                                                2};
+    mark_os::controller::ControllerStateTransceiver controllerStateTransceiver{controller, transceiverWithRetries};
 public:
 
     mark_os::controller::Controller &getController()
